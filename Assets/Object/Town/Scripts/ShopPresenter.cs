@@ -23,7 +23,7 @@ public class ShopPresenter : MonoBehaviour
     void Ready(){
         //アイテムのセット
         // modelに指示
-        model.ShopModelG();
+        model.ShopModelG(ItemType.Food);
         // FIXME本来はデータを受け取る?モデルがもってるからいらん？
         view.ShowAll();
         view.SetItem(model.GetItemPrice(1),model.GetItemPrice(2),model.GetItemPrice(3));    
