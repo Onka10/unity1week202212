@@ -4,10 +4,19 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObject/TownData")]
 public class TownData : ScriptableObject
 {
-    [SerializeField] public string TownName;
+    [SerializeField] public TownType type;
     [SerializeField] public State status1;
     [SerializeField] public State status2;
 
+}
+
+public enum TownType{
+    Desert,
+    Port,
+    Rural,
+    City,
+    industrialCity
+    
 }
 
 public enum State{

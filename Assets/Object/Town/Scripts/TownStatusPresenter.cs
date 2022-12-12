@@ -6,9 +6,9 @@ using UniRx;
 public class TownStatusPresenter : MonoBehaviour
 {
     [SerializeField] TownStatusView view;
+    [SerializeField] TownData[] t = new TownData[4];
 
-    [SerializeField] TownData t1;
-    [SerializeField] TownData t2;
+    [SerializeField] TownData NowTown;
 
     private void Start() {
         GameManager.I.State
@@ -18,7 +18,8 @@ public class TownStatusPresenter : MonoBehaviour
     }
 
     void Ready(){
-        TownData td = t1;
+        TownData td = t[Random.Range(0,4)];
+        NowTown = td;
         view.Setdata(td);
     }
 }

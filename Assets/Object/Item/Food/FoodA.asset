@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72bf7dc6f53c281488f427ab4bf9853d, type: 3}
-  m_Name: test
+  m_Script: {fileID: 11500000, guid: 20104ba8a44f17947add6f034286d1d6, type: 3}
+  m_Name: FoodA
   m_EditorClassIdentifier: 
-  TownName: "\u3055\u3070\u304F\u306E\u753A"
-  status1: 0
-  status2: 1
+  type: 0
+  ItemName: 
+  price: 600

@@ -7,13 +7,10 @@ public class TownStatusView : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI TownName;
     [SerializeField] TextMeshProUGUI st1;
-    [SerializeField] TextMeshProUGUI st2;
 
     public void Setdata(TownData td){
-        TownName.text = td.TownName;
+        TownName.text = ToStringSS.EnumToString2(td.type);
         st1.text = ToStringSS.EnumToString(td.status1);
-        st2.text = ToStringSS.EnumToString(td.status2);
-
     }
 
 }

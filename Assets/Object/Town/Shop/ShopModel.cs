@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ShopModel : MonoBehaviour
 {
-    private int[] items = new int[3];
+    private Item[] items = new Item[3];
 
-    public void ShopModelG(){
-        items[0]= Random.Range(1, 9) * 100;
-        items[1]= Random.Range(1, 9) * 100;
-        items[2]= Random.Range(1, 9) * 100;
+    public void ShopModelG(ItemType t){
+
+        items[0]= ShopDB.I.GetRandomItem(t);
+        items[1]= ShopDB.I.GetRandomItem(t);
+        items[2]= ShopDB.I.GetRandomItem(t);
     }
 
     public int GetItemPrice(int i){
-        return items[i-1];
-        // return 100;
+        return items[i-1].price;
     }
 }
