@@ -10,11 +10,15 @@ public class GameManager : Singleton<GameManager>
     private readonly ReactiveProperty<GameState> _state = new ReactiveProperty<GameState>(GameState.Move);
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.N)) _state.Value = GameState.Town;
+        // if(Input.GetKeyDown(KeyCode.N)) _state.Value = GameState.Town;
     }
 
     public void ToMove(){
         _state.Value = GameState.Move;
+    }
+
+    public void ToTown(){
+        _state.Value = GameState.Town;
     }
 }
 

@@ -9,6 +9,8 @@ public class ShopPresenter : MonoBehaviour
     [SerializeField] ShopModel model;
     [SerializeField] ShopView view;
 
+    [SerializeField] MyItemsPresenter myItems;
+
     void Start()
     {
         //タウンフェーズ開始を確認
@@ -21,9 +23,10 @@ public class ShopPresenter : MonoBehaviour
     void Ready(){
         //アイテムのセット
         // modelに指示
-        model.ShopModelG(100,200,300);
-        // FIXME本来はデータを受け取る
-        view.SetItem(100,200,300);    
+        model.ShopModelG();
+        // FIXME本来はデータを受け取る?モデルがもってるからいらん？
+        view.ShowAll();
+        view.SetItem(model.GetItemPrice(1),model.GetItemPrice(2),model.GetItemPrice(3));    
     }
 
     public void Buy(int i){
@@ -31,7 +34,8 @@ public class ShopPresenter : MonoBehaviour
         if(MoneyManager.I.Money.Value < price) Debug.Log("お金がたりません");
         else{
             MoneyManager.I.Minus(price);
+            myItems.Add(price);
+            view.Hide(i);
         }
-        Debug.Log(i);
     }
 }
