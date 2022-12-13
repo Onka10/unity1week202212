@@ -6,7 +6,7 @@ using UniRx;
 public class GameManager : Singleton<GameManager>
 {
     public IReadOnlyReactiveProperty<GameState> State => _state;
-    private readonly ReactiveProperty<GameState> _state = new ReactiveProperty<GameState>(GameState.Map);
+    private readonly ReactiveProperty<GameState> _state = new ReactiveProperty<GameState>(GameState.Title);
     public IReadOnlyReactiveProperty<int> Step => step;
     private readonly ReactiveProperty<int> step = new ReactiveProperty<int>(1);  
 
