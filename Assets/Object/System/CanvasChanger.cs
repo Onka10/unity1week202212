@@ -6,8 +6,11 @@ using UniRx;
 public class CanvasChanger : Singleton<CanvasChanger>
 {
     // [SerializeField] GameState state;
-    [SerializeField] GameObject move;
+    [SerializeField] GameObject title;
     [SerializeField] GameObject town;
+    [SerializeField] GameObject map;
+    [SerializeField] GameObject result;
+    
 
     private void Start() {
         GameManager.I.State
@@ -16,12 +19,14 @@ public class CanvasChanger : Singleton<CanvasChanger>
     }
 
     void Change(GameState s){
-        if(s==GameState.Map){
-            move.SetActive(true);
-            town.SetActive(false);
+        if(s==GameState.Title){
+            title.SetActive(true);
+        }else if(s==GameState.Town){
+            map.SetActive(false);
+            town.SetActive(true);  
         }else{
-            move.SetActive(false);
-            town.SetActive(true);           
+            town.SetActive(false);
+            map.SetActive(true);
         }
     }
 }
