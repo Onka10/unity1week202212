@@ -15,12 +15,14 @@ public enum TownType{
     Port,
     Rural,
     City,
-    industrialCity
+    industrialCity,
+    MyTown,
     
 }
 
 public enum State{
     hunger,//うえ
     popular,//流行
-    economy//景気
+    economy,//景気
+    None,
 }

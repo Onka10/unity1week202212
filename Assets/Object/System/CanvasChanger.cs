@@ -22,11 +22,15 @@ public class CanvasChanger : Singleton<CanvasChanger>
         if(s==GameState.Title){
             title.SetActive(true);
         }else if(s==GameState.Town){
+            title.SetActive(false);
             map.SetActive(false);
             town.SetActive(true);  
-        }else{
+        }else if(s==GameState.Map){
             town.SetActive(false);
             map.SetActive(true);
+        }else{
+            town.SetActive(false);
+            result.SetActive(true);
         }
     }
 }
