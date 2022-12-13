@@ -11,7 +11,9 @@ public class ItemDB : Singleton<ItemDB>
     public Item GetRandomItem(ItemType t){
         var item=Ente[0];
 
-        var r = Random.Range(0,4);
+        //FIXME 仮で
+        // var r = Random.Range(0,4);
+        var r = 0;
         if(t==ItemType.Food) item =Food[r];
         else if(t==ItemType.IndustrialGoods) item=Inds[r];
         else item = Ente[r];

@@ -18,6 +18,7 @@ public class ToStringSS
         {State.hunger ,"食糧難"},
         {State.popular ,"流行"},
         {State.economy ,"景気"},
+        {State.None ,"なし"},
     };
 
     static private Dictionary<TownType, string> Sate2StringDict2= new Dictionary<TownType, string>(){
@@ -25,6 +26,7 @@ public class ToStringSS
         {TownType.Desert ,"さばくの町"},
         {TownType.Port ,"港町"},
         {TownType.industrialCity,"工業都市"},
-        {TownType.Rural,"農村"}
+        {TownType.Rural,"農村"},
+        {TownType.MyTown,"最初の町"}
     };
 }
