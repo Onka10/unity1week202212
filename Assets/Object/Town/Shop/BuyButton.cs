@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
 
-public class NextPhasePresenter : MonoBehaviour
+public class BuyButton : MonoBehaviour
 {
+    [SerializeField] ShopPresenter shopPresenter;
+    [SerializeField] int ID;
+
     void Start()
     {
         this.gameObject.GetComponent<Button>().OnClickAsObservable()
-        .Subscribe(_ => GameManager.I.ToMove())
+        .Subscribe(_ => shopPresenter.Buy(ID))
         .AddTo(this);   
     }
 }

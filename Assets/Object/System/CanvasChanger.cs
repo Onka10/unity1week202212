@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 
-public class CanvasPresenter : MonoBehaviour
+public class CanvasChanger : Singleton<CanvasChanger>
 {
     // [SerializeField] GameState state;
     [SerializeField] GameObject move;
@@ -16,7 +16,7 @@ public class CanvasPresenter : MonoBehaviour
     }
 
     void Change(GameState s){
-        if(s==GameState.Move){
+        if(s==GameState.Map){
             move.SetActive(true);
             town.SetActive(false);
         }else{

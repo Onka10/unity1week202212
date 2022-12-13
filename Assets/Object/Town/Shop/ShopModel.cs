@@ -8,9 +8,9 @@ public class ShopModel : MonoBehaviour
 
     public void ShopModelG(ItemType t){
 
-        items[0]= ShopDB.I.GetRandomItem(t);
-        items[1]= ShopDB.I.GetRandomItem(t);
-        items[2]= ShopDB.I.GetRandomItem(t);
+        items[0]= ItemDB.I.GetRandomItem(t);
+        items[1]= ItemDB.I.GetRandomItem(t);
+        items[2]= ItemDB.I.GetRandomItem(t);
     }
 
     public int GetItemPrice(int i){

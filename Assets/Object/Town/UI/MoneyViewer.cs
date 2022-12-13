@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UniRx;
 
-public class MoneyView : MonoBehaviour
+public class MoneyViewer : MonoBehaviour
 {
     [SerializeField]  private TextMeshProUGUI _money;
 

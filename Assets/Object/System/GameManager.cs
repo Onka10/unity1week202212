@@ -6,7 +6,7 @@ using UniRx;
 public class GameManager : Singleton<GameManager>
 {
     public IReadOnlyReactiveProperty<GameState> State => _state;
-    private readonly ReactiveProperty<GameState> _state = new ReactiveProperty<GameState>(GameState.Move);
+    private readonly ReactiveProperty<GameState> _state = new ReactiveProperty<GameState>(GameState.Map);
     public IReadOnlyReactiveProperty<int> Step => step;
     private readonly ReactiveProperty<int> step = new ReactiveProperty<int>(1);  
 
@@ -14,8 +14,8 @@ public class GameManager : Singleton<GameManager>
         // if(Input.GetKeyDown(KeyCode.N)) _state.Value = GameState.Town;
     }
 
-    public void ToMove(){
-        _state.Value = GameState.Move;
+    public void ToMap(){
+        _state.Value = GameState.Map;
         step.Value++;
     }
 
@@ -25,6 +25,8 @@ public class GameManager : Singleton<GameManager>
 }
 
 public enum GameState{
-    Move,
-    Town
+    Title,
+    Map,
+    Town,
+    Result
 }

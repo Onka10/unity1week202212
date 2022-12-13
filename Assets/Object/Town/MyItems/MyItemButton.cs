@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
 
-public class ShopItemPresenter : MonoBehaviour
+public class MyItemButton : MonoBehaviour
 {
-    [SerializeField] ShopPresenter shopPresenter;
+    // [SerializeField] ShopPresenter shopP;
+    [SerializeField] MyItemsPresenter myItemsP;
     [SerializeField] int ID;
-
     void Start()
     {
         this.gameObject.GetComponent<Button>().OnClickAsObservable()
-        .Subscribe(_ => shopPresenter.Buy(ID))
+        .Subscribe(_ => myItemsP.Sell(ID))
         .AddTo(this);   
     }
 }
