@@ -20,6 +20,8 @@ public class CanvasChanger : Singleton<CanvasChanger>
 
     void Change(GameState s){
         if(s==GameState.Title){
+            map.SetActive(false);
+            town.SetActive(false);  
             title.SetActive(true);
         }else if(s==GameState.Town){
             title.SetActive(false);
