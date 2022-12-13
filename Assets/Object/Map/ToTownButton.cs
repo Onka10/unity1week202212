@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
 
-public class MovePresener : MonoBehaviour
+public class ToTownButton : MonoBehaviour
 {
     [SerializeField] int step;
     void Start()

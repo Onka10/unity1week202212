@@ -4,15 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
 
-public class HandePresenter : MonoBehaviour
+public class ToMapButton : MonoBehaviour
 {
-    // [SerializeField] ShopPresenter shopP;
-    [SerializeField] MyItemsPresenter myItemsP;
-    [SerializeField] int ID;
     void Start()
     {
         this.gameObject.GetComponent<Button>().OnClickAsObservable()
-        .Subscribe(_ => myItemsP.Sell(ID))
+        .Subscribe(_ => GameManager.I.ToMap())
         .AddTo(this);   
     }
 }

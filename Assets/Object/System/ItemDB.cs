@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopDB : Singleton<ShopDB>
+public class ItemDB : Singleton<ItemDB>
 {
     [SerializeField] List<Item> Ente = new List<Item>();
     [SerializeField] List<Item> Food = new List<Item>();
