@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bf7dc6f53c281488f427ab4bf9853d, type: 3}
   m_Name: Desert
   m_EditorClassIdentifier: 
-  type: 0
-  status1: 0
-  status2: 0
+  Type: 0
+  status1: 3
+  status2: 3
   Supply: 5
-  BackGround: {fileID: 2100000, guid: dfa25e8b1dffe5a4f82679aec7256c29, type: 2}
+  Demand: 5
+  BackGround: {fileID: 2100000, guid: 0cce583eea6c5644aaf15f40a58d8ce2, type: 2}

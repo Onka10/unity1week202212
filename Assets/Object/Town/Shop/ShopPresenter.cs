@@ -33,7 +33,7 @@ public class ShopPresenter : MonoBehaviour
     public void Buy(int id){
         var item =  model.GetItem(id);
 
-        if(MoneyManager.I.Minus(item.price)){
+        if(MoneyManager.I.Minus(Cal.I.CalcPrice(item))){
             inventory.Add(item);
             view.Hide(id);
         }else{

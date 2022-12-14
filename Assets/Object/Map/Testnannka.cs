@@ -26,7 +26,7 @@ namespace Kari
             GameManager.I.Phase
             .Where(s => s==GamePhase.InGame)
             .Subscribe(_ =>{
-               this.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = ToStringSS.EnumToString2(mapp.GetTownData(id).type);
+               this.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = ToStringSS.EnumToString2(mapp.GetTownData(id).Type);
             })
             .AddTo(this);
         }

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bf7dc6f53c281488f427ab4bf9853d, type: 3}
   m_Name: Kngdom
   m_EditorClassIdentifier: 
-  type: 2
-  status1: 2
-  status2: 2
+  Type: 2
+  status1: 3
+  status2: 3
   Supply: 2
+  Demand: 1
   BackGround: {fileID: 2100000, guid: bf9480f3cccfeba479831866c923cd0c, type: 2}

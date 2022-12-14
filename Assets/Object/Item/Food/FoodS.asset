@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FoodS
   m_EditorClassIdentifier: 
   type: 0
-  ItemName: "\u305F\u3079\u3082\u306Es"
+  itemName: "\u98DF\u6599s"
   price: 1000
   image: {fileID: 21300000, guid: 4346337f9c2e75f47acc8fd4a7fd7f83, type: 3}

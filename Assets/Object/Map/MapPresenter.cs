@@ -19,7 +19,7 @@ public class MapPresenter : MonoBehaviour
 
     void Ready(){
         TownList.Add(firstTown);
-        for(int i=0;i<GameManager.MaxTownCount;i++){
+        for(int i=0;i<GameManager.MaxTownCount-1;i++){
             TownList.Add(t[Random.Range(0,4)]);
         }
         TownList.Add(EndTown);
