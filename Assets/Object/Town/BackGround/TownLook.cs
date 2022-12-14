@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class TownLook : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] MeshRenderer renderer;
+    [SerializeField] MapPresenter mapP;
     void Start()
     {
-        
+        GameManager.I.MapTown
+        .Where(s => s==InGameSate.Town)
+        .Subscribe(s => Change(s))
+        .AddTo(this);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Change(InGameSate s){
+        renderer.material = mapP.GetTownData(GameManager.I.Step.Value).BackGround;
     }
 }

@@ -5,7 +5,7 @@ using UniRx;
 
 public class GameManager : Singleton<GameManager>
 {
-    public static int MaxTownCount=5;
+    public static int MaxTownCount=7;
     public IReadOnlyReactiveProperty<GamePhase> Phase => _state;
     private readonly ReactiveProperty<GamePhase> _state = new ReactiveProperty<GamePhase>(GamePhase.Title);
 
@@ -20,12 +20,12 @@ public class GameManager : Singleton<GameManager>
 
     private void Update() {
         // if(Input.GetKeyDown(KeyCode.N)) _state.Value = GameState.Town;
+        // Debug.Log(step.Value);
     }
 
     public void ToMap(){
         _mt.Value = InGameSate.Map;
         step.Value++;
-        Debug.Log(step.Value);
     }
 
     public void ToTown(){

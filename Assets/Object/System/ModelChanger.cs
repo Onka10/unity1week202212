@@ -10,6 +10,10 @@ public class ModelChanger :Singleton<ModelChanger>
         GameManager.I.MapTown
         .Subscribe(s => Change(s))
         .AddTo(this);
+
+        GameManager.I.Phase
+        .Subscribe(s => ChangePhase(s))
+        .AddTo(this);
     }
 
     void Change(InGameSate s){
@@ -20,6 +24,13 @@ public class ModelChanger :Singleton<ModelChanger>
             Map.SetActive(false);
             BackGround.SetActive(true);
         }
+    }
+
+    void ChangePhase(GamePhase s){
+        if(s==GamePhase.InGame) return;
+        
+        Map.SetActive(false);
+        BackGround.SetActive(true);       
     }
 
 }

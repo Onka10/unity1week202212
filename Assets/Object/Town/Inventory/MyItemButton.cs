@@ -11,6 +11,7 @@ public class MyItemButton : MonoBehaviour
     void Start()
     {
         this.gameObject.GetComponent<Button>().OnClickAsObservable()
+        .Where(_ => GameManager.I.MapTown.Value == InGameSate.Town)
         .Subscribe(_ => myItemsP.Sell(ID))
         .AddTo(this);   
     }
