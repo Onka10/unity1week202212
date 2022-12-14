@@ -13,26 +13,38 @@ public class CanvasChanger : Singleton<CanvasChanger>
     
 
     private void Start() {
-        GameManager.I.State
+        GameManager.I.MapTown
         .Subscribe(s => Change(s))
+        .AddTo(this);
+
+
+        GameManager.I.Phase
+        .Subscribe(s => ChangePhase(s))
         .AddTo(this);
     }
 
-    void Change(GameState s){
-        if(s==GameState.Title){
-            map.SetActive(false);
-            town.SetActive(false);  
-            title.SetActive(true);
-        }else if(s==GameState.Town){
-            title.SetActive(false);
-            map.SetActive(false);
-            town.SetActive(true);  
-        }else if(s==GameState.Map){
+
+    void Change(InGameSate s){
+        if(s==InGameSate.Map){
             town.SetActive(false);
             map.SetActive(true);
+        }else if(s==InGameSate.Town){
+            map.SetActive(false);
+            town.SetActive(true);
         }else{
+            map.SetActive(false);
             town.SetActive(false);
+        }
+    }
+
+    void ChangePhase(GamePhase s){
+        if(s==GamePhase.Title){
+            title.SetActive(true);
+        }else if(s==GamePhase.Result){
             result.SetActive(true);
+        }else{
+            title.SetActive(false);
+            result.SetActive(false);
         }
     }
 }

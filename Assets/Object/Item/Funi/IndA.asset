@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: IndA
   m_EditorClassIdentifier: 
   type: 1
-  ItemName: 
+  ItemName: "\u304B\u3050a"
   price: 1000
+  image: {fileID: 21300000, guid: 17e4076c7dc2b7847a23dbcccfd234bc, type: 3}

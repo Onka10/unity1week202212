@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Port
   m_EditorClassIdentifier: 
   type: 1
-  status1: 1
-  status2: 1
+  status1: 3
+  status2: 3
+  Supply: 0

@@ -15,4 +15,7 @@ public enum ItemType{
     Food,
     Furniture,
     Entertainment,
+    Starter,
+    Last,
+    Random,
 }

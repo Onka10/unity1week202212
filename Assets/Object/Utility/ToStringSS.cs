@@ -12,9 +12,7 @@ public class ToStringSS
     }
 
     public static string EnumToString2(TownType s){
-        // return Sate2StringDict2[s];
-        Debug.Log(s);
-        return "てすと";
+        return Sate2StringDict2[s];
     }
 
     static private Dictionary<State, string> Sate2StringDict= new Dictionary<State, string>(){
