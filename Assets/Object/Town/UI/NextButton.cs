@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
+using TMPro;
 
 public class NextButton : MonoBehaviour
 {
@@ -17,5 +18,13 @@ public class NextButton : MonoBehaviour
         .Where(_ => GameManager.I.Step.Value == GameManager.MaxTownCount)
         .Subscribe(_ => GameManager.I.Finish())
         .AddTo(this);  
+
+
+        GameManager.I.MapTown
+        .Where(_ => GameManager.I.Step.Value == GameManager.MaxTownCount-1)
+        .Subscribe(_ =>{
+            this.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "旅を終える";
+        })
+        .AddTo(this);
     }
 }

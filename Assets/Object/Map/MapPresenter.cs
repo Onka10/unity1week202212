@@ -9,7 +9,7 @@ public class MapPresenter : MonoBehaviour
     [SerializeField] TownData EndTown;
     [SerializeField] TownData[] t = new TownData[4];
 
-    List<TownData> TownList = new List<TownData>();
+    [SerializeField] List<TownData> TownList = new List<TownData>();
     private void Start() {
         GameManager.I.Phase
         .Where(s => s==GamePhase.Title)
@@ -18,12 +18,11 @@ public class MapPresenter : MonoBehaviour
     }
 
     void Ready(){
-        Debug.Log("今回のマップを決定");
         TownList.Add(firstTown);
         for(int i=0;i<GameManager.MaxTownCount;i++){
             TownList.Add(t[Random.Range(0,4)]);
         }
-        TownList[GameManager.MaxTownCount] = EndTown;
+        TownList.Add(EndTown);
     }
 
     public TownData GetTownData(int i){
