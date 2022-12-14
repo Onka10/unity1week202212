@@ -14,8 +14,7 @@ public class TownData : ScriptableObject
 public enum TownType{
     Desert,
     Port,
-    Rural,
-    City,
+    Kingdom,
     industrialCity,
     MyTown,
     

@@ -13,6 +13,6 @@ public class Item : ScriptableObject
 
 public enum ItemType{
     Food,
-    IndustrialGoods,
+    Furniture,
     Entertainment,
 }

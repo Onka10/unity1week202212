@@ -6,8 +6,7 @@ using UniRx;
 
 public class MyItemButton : MonoBehaviour
 {
-    // [SerializeField] ShopPresenter shopP;
-    [SerializeField] MyItemsPresenter myItemsP;
+    [SerializeField] InventoryPresenter myItemsP;
     [SerializeField] int ID;
     void Start()
     {

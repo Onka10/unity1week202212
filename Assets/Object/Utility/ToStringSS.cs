@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class ToStringSS
 {
@@ -11,7 +12,9 @@ public class ToStringSS
     }
 
     public static string EnumToString2(TownType s){
-        return Sate2StringDict2[s];
+        // return Sate2StringDict2[s];
+        Debug.Log(s);
+        return "てすと";
     }
 
     static private Dictionary<State, string> Sate2StringDict= new Dictionary<State, string>(){
@@ -22,11 +25,10 @@ public class ToStringSS
     };
 
     static private Dictionary<TownType, string> Sate2StringDict2= new Dictionary<TownType, string>(){
-        {TownType.City ,"都市"},
-        {TownType.Desert ,"さばくの町"},
+        {TownType.Kingdom ,"王都"},
+        {TownType.Desert ,"砂漠の町"},
         {TownType.Port ,"港町"},
         {TownType.industrialCity,"工業都市"},
-        {TownType.Rural,"農村"},
         {TownType.MyTown,"最初の町"}
     };
 }

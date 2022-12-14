@@ -13,6 +13,6 @@ public class ShopModel : MonoBehaviour
     }
 
     public Item GetItem(int i){
-        return items[i-1];
+        return items[i];
     }
 }

@@ -26,9 +26,9 @@ public class ShopView : MonoBehaviour
     }
 
     public void Hide(int i){
-        if(i==1)    Item1.SetActive(false);
-        if(i==2)    Item2.SetActive(false);
-        if(i==3)    Item3.SetActive(false);
+        if(i==0)    Item1.SetActive(false);
+        if(i==1)    Item2.SetActive(false);
+        if(i==2)    Item3.SetActive(false);
     }
 
     public void ShowAll(){
