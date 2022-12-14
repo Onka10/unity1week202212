@@ -9,33 +9,36 @@ public class ShopPresenter : MonoBehaviour
     [SerializeField] ShopModel model;
     [SerializeField] ShopView view;
 
-    [SerializeField] MyItemsPresenter myItems;
+    [SerializeField] InventoryPresenter inventory;
+    [SerializeField] TownStatusPresenter townStatus;
 
     void Start()
     {
-        //タウンフェーズ開始を確認
-        GameManager.I.State
-        .Where(s => s==GameState.Town)
+        townStatus.Decided
         .Subscribe(_ => Ready())
         .AddTo(this);
     }
 
     void Ready(){
-        //アイテムのセット
+        //情報の入手
+        var towndata = townStatus.GetTownData();
         // modelに指示
-        model.ShopModelG(ItemType.Food);
+        model.ShopModelG(towndata.Supply);
         // FIXME本来はデータを受け取る?モデルがもってるからいらん？
+
+        //README viewは仕様変更の可能性あり
         view.ShowAll();
-        view.SetItem(model.GetItemPrice(1),model.GetItemPrice(2),model.GetItemPrice(3));    
+        view.SetItem(model.GetItem(0),model.GetItem(1),model.GetItem(2));    
     }
 
-    public void Buy(int i){
-        var price =  model.GetItemPrice(i);
-        if(MoneyManager.I.Money.Value < price) Debug.Log("お金がたりません");
-        else{
-            MoneyManager.I.Minus(price);
-            myItems.Add(price);
-            view.Hide(i);
+    public void Buy(int id){
+        var item =  model.GetItem(id);
+
+        if(MoneyManager.I.Minus(item.price)){
+            inventory.Add(item);
+            view.Hide(id);
+        }else{
+            Debug.Log("お金がたりません");
         }
     }
 }

@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UniRx;
 
@@ -10,7 +10,10 @@ public class TownStatusPresenter : MonoBehaviour
     [SerializeField] TownData EndTown;
     [SerializeField] TownData[] t = new TownData[4];
 
-    [SerializeField] TownData NowTown;
+    private TownData nowTown;
+
+    public IObservable<Unit> Decided => _decided;
+    private readonly Subject<Unit> _decided = new Subject<Unit>();
 
     private void Start() {
         GameManager.I.State
@@ -20,22 +23,25 @@ public class TownStatusPresenter : MonoBehaviour
     }
 
     void Ready(){
+        //最初の町
         if(GameManager.I.Step.Value == 0){
             TownData td = firstTown;
-            NowTown = td;
+            nowTown = td;
             view.Setdata(td);
-
-        }else if(GameManager.I.Step.Value == GameManager.MaxTownCount){
+        }else if(GameManager.I.Step.Value == GameManager.MaxTownCount){//最後の町
             TownData td = EndTown;
-            NowTown = td;
+            nowTown = td;
             view.Setdata(td);
         }else{
-            TownData td = t[Random.Range(0,4)];
-            NowTown = td;
+            TownData td = t[UnityEngine.Random.Range(0,4)];
+            nowTown = td;
             view.Setdata(td);
         }
-        
 
-        
+        _decided.OnNext(Unit.Default);
+    }
+
+    public TownData GetTownData(){
+        return nowTown;
     }
 }
