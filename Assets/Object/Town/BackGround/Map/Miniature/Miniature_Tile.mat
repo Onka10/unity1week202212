@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: minimap_Royal_0
+  m_Name: Miniature_Tile
   m_Shader: {fileID: -6465566751694194690, guid: f7ea0ea91f6ace545b8af21d3475396e, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
