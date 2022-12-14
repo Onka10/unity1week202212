@@ -41,6 +41,8 @@ public class CanvasChanger : Singleton<CanvasChanger>
         if(s==GamePhase.Title){
             title.SetActive(true);
         }else if(s==GamePhase.Result){
+            map.SetActive(false);
+            town.SetActive(false);
             result.SetActive(true);
         }else{
             title.SetActive(false);

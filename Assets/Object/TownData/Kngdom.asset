@@ -16,3 +16,4 @@ MonoBehaviour:
   status1: 2
   status2: 2
   Supply: 2
+  BackGround: {fileID: 2100000, guid: bf9480f3cccfeba479831866c923cd0c, type: 2}
