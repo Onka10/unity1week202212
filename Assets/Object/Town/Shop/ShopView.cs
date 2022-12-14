@@ -12,17 +12,17 @@ public class ShopView : MonoBehaviour
 
     public void SetItem(Item a,Item b,Item c){
         //名前・画像・価格
-        Item1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = a.ItemName;
-        Item2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = b.ItemName;   
-        Item3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = c.ItemName;  
+        Item1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = a.itemName;
+        Item2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = b.itemName;   
+        Item3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = c.itemName;  
 
         Item1.transform.GetChild(1).GetComponent<Image>().sprite = a.image;
         Item2.transform.GetChild(1).GetComponent<Image>().sprite = b.image;  
         Item3.transform.GetChild(1).GetComponent<Image>().sprite = c.image;
 
-        Item1.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = a.price.ToString();
-        Item2.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = b.price.ToString();    
-        Item3.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = c.price.ToString();         
+        Item1.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = Cal.I.CalcPrice(a).ToString();
+        Item2.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = Cal.I.CalcPrice(b).ToString();  
+        Item3.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = Cal.I.CalcPrice(c).ToString();        
     }
 
     public void Hide(int i){

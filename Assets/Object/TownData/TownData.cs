@@ -4,10 +4,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObject/TownData")]
 public class TownData : ScriptableObject
 {
-    [SerializeField] public TownType type;
+    [SerializeField] public TownType Type;
     [SerializeField] public State status1;
     [SerializeField] public State status2;
-    [SerializeField] public ItemType Supply;
+    [SerializeField] public ItemType Supply;//供給
+    [SerializeField] public ItemType Demand;//需要
     [SerializeField] public Material BackGround;
 
 }

@@ -38,6 +38,6 @@ public class InventoryView : MonoBehaviour
 
         //アイテム反映
         Hands[i].transform.GetChild(0).GetComponent<Image>().sprite =  item.image;
-        Hands[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.price.ToString();
+        Hands[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = Cal.I.CalcPrice(item).ToString();
     }
 }

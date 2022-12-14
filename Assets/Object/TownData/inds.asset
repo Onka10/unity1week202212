@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bf7dc6f53c281488f427ab4bf9853d, type: 3}
   m_Name: inds
   m_EditorClassIdentifier: 
-  type: 3
-  status1: 0
-  status2: 1
+  Type: 3
+  status1: 3
+  status2: 3
   Supply: 1
+  Demand: 0
   BackGround: {fileID: 2100000, guid: dfa25e8b1dffe5a4f82679aec7256c29, type: 2}
