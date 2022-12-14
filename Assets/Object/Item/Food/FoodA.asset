@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: FoodA
   m_EditorClassIdentifier: 
   type: 0
-  ItemName: 
+  ItemName: "\u305F\u3079\u3082\u306E"
   price: 600
+  image: {fileID: 21300000, guid: 4a2a6af77a01e1840914de8949357ef9, type: 3}

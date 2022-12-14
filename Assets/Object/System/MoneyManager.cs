@@ -11,16 +11,22 @@ public class MoneyManager : Singleton<MoneyManager>
     public void Set(int m){
         money.Value = m;
     }
+    public void Reset(){
+        money.Value = 0;
+    }
 
     public void Add(int m){
         money.Value += m;
     }
 
-    public void Minus(int m){
-        money.Value -= m;
+    public bool Minus(int p){
+        if(money.Value < p){
+            return false;
+        }else{
+            money.Value -= p;
+            return true;
+        }
     }
 
-    public void Reset(){
-        money.Value = 0;
-    }
+
 }

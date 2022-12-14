@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3957594
 Transform:
   m_ObjectHideFlags: 0
@@ -772,10 +772,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 166573361}
-  - component: {fileID: 166573360}
-  - component: {fileID: 166573363}
-  - component: {fileID: 166573364}
   - component: {fileID: 166573365}
+  - component: {fileID: 166573360}
+  - component: {fileID: 166573364}
+  - component: {fileID: 166573363}
   m_Layer: 0
   m_Name: Town
   m_TagString: Untagged
@@ -838,6 +838,7 @@ MonoBehaviour:
   model: {fileID: 166573360}
   view: {fileID: 1587708720}
   myItems: {fileID: 166573363}
+  townStatus: {fileID: 166573365}
 --- !u!114 &166573365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,7 +860,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c9315393c0f6c044ca5ebab88772ab7a, type: 2}
   - {fileID: 11400000, guid: 6f39c4dc4d2847d4e831951885618e78, type: 2}
   - {fileID: 11400000, guid: 46c573a1a2180d44b9da42c7234c9db9, type: 2}
-  NowTown: {fileID: 0}
 --- !u!1 &188776628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,11 +1417,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ente:
-  - {fileID: 11400000, guid: fc5313a54dc064e4989420ba0f88c0a6, type: 2}
+  - {fileID: 11400000, guid: 37742043b3a9e5e4e85bee8136f5c183, type: 2}
   Food:
-  - {fileID: 11400000, guid: fc5313a54dc064e4989420ba0f88c0a6, type: 2}
+  - {fileID: 11400000, guid: 37742043b3a9e5e4e85bee8136f5c183, type: 2}
   Inds:
-  - {fileID: 11400000, guid: fc5313a54dc064e4989420ba0f88c0a6, type: 2}
+  - {fileID: 11400000, guid: 37742043b3a9e5e4e85bee8136f5c183, type: 2}
 --- !u!114 &405829918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3217,7 +3217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1176378322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4614,7 +4614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1842906215
 RectTransform:
   m_ObjectHideFlags: 0

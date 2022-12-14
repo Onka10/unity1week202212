@@ -6,14 +6,13 @@ public class ShopModel : MonoBehaviour
 {
     private Item[] items = new Item[3];
 
-    public void ShopModelG(ItemType t){
-
-        items[0]= ItemDB.I.GetRandomItem(t);
-        items[1]= ItemDB.I.GetRandomItem(t);
-        items[2]= ItemDB.I.GetRandomItem(t);
+    public void ShopModelG(ItemType it){
+        items[0]= ItemDB.I.GetRandomItem(it);
+        items[1]= ItemDB.I.GetRandomItem(it);
+        items[2]= ItemDB.I.GetRandomItem(it);
     }
 
-    public int GetItemPrice(int i){
-        return items[i-1].price;
+    public Item GetItem(int i){
+        return items[i-1];
     }
 }
