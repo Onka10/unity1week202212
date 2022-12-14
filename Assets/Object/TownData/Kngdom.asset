@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20104ba8a44f17947add6f034286d1d6, type: 3}
-  m_Name: IndC
+  m_Script: {fileID: 11500000, guid: 72bf7dc6f53c281488f427ab4bf9853d, type: 3}
+  m_Name: Kngdom
   m_EditorClassIdentifier: 
-  type: 1
-  ItemName: 
-  price: 600
+  type: 2
+  status1: 2
+  status2: 2
+  Supply: 2

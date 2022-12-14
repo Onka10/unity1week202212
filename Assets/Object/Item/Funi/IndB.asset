@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20104ba8a44f17947add6f034286d1d6, type: 3}
-  m_Name: IndS
+  m_Name: IndB
   m_EditorClassIdentifier: 
   type: 1
-  ItemName: 
-  price: 1100
+  ItemName: "\u304B\u3050b"
+  price: 800
+  image: {fileID: 21300000, guid: 17e4076c7dc2b7847a23dbcccfd234bc, type: 3}

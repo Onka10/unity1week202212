@@ -6,9 +6,7 @@ using UniRx;
 public class TownStatusPresenter : MonoBehaviour
 {
     [SerializeField] TownStatusView view;
-    [SerializeField] TownData firstTown;
-    [SerializeField] TownData EndTown;
-    [SerializeField] TownData[] t = new TownData[4];
+    [SerializeField] MapPresenter mapP;
 
     private TownData nowTown;
 
@@ -16,32 +14,20 @@ public class TownStatusPresenter : MonoBehaviour
     private readonly Subject<Unit> _decided = new Subject<Unit>();
 
     private void Start() {
-        GameManager.I.State
-        .Where(s => s==GameState.Town)
-        .Subscribe(_ => Ready())
+        GameManager.I.MapTown
+        .Where(s => s==InGameSate.Town)
+        .Subscribe(s => Ready())
         .AddTo(this);
     }
 
     void Ready(){
-        //最初の町
-        if(GameManager.I.Step.Value == 0){
-            TownData td = firstTown;
-            nowTown = td;
-            view.Setdata(td);
-        }else if(GameManager.I.Step.Value == GameManager.MaxTownCount){//最後の町
-            TownData td = EndTown;
-            nowTown = td;
-            view.Setdata(td);
-        }else{
-            TownData td = t[UnityEngine.Random.Range(0,4)];
-            nowTown = td;
-            view.Setdata(td);
-        }
+        nowTown = mapP.GetTownData(GameManager.I.Step.Value);
+        view.Setdata(nowTown);
 
         _decided.OnNext(Unit.Default);
     }
 
-    public TownData GetTownData(){
+    public TownData GetMowTownData(){
         return nowTown;
     }
 }

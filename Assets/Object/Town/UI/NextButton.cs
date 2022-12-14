@@ -15,7 +15,7 @@ public class NextButton : MonoBehaviour
 
         this.gameObject.GetComponent<Button>().OnClickAsObservable()
         .Where(_ => GameManager.I.Step.Value == GameManager.MaxTownCount)
-        .Subscribe(_ => GameManager.I.ToResult())
+        .Subscribe(_ => GameManager.I.Finish())
         .AddTo(this);  
     }
 }

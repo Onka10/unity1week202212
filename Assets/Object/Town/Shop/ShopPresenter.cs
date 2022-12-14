@@ -21,10 +21,9 @@ public class ShopPresenter : MonoBehaviour
 
     void Ready(){
         //情報の入手
-        var towndata = townStatus.GetTownData();
-        // modelに指示
+        var towndata = townStatus.GetMowTownData();
+        // 商品の用意
         model.ShopModelG(towndata.Supply);
-        // FIXME本来はデータを受け取る?モデルがもってるからいらん？
 
         //README viewは仕様変更の可能性あり
         view.ShowAll();

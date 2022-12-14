@@ -13,8 +13,8 @@ public class ShopView : MonoBehaviour
     public void SetItem(Item a,Item b,Item c){
         //名前・画像・価格
         Item1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = a.ItemName;
-        Item2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = a.ItemName;   
-        Item3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = a.ItemName;  
+        Item2.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = b.ItemName;   
+        Item3.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = c.ItemName;  
 
         Item1.transform.GetChild(1).GetComponent<Image>().sprite = a.image;
         Item2.transform.GetChild(1).GetComponent<Image>().sprite = b.image;  

@@ -11,7 +11,7 @@ namespace Title
         void Start()
         {
             this.gameObject.GetComponent<Button>().OnClickAsObservable()
-            .Subscribe(_ => GameManager.I.ToTown())
+            .Subscribe(_ => GameManager.I.Play())
             .AddTo(this);  
         }
 
