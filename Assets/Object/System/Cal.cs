@@ -34,6 +34,8 @@ public class Cal : Singleton<Cal>
 
     float CalcSDBuff(){
         //需要と供給のバフ
+        if(townData.Type ==TownType.MyTown) return 1f;
+
         if(item.type == townData.Supply) return 1f;
         else if(item.type == townData.Demand) return 2f;
         else return 1.5f;
