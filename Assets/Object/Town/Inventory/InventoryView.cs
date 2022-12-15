@@ -24,6 +24,7 @@ public class InventoryView : MonoBehaviour
         for(int i=0;i<Hands.Count;i++){
             Hands[i].GetComponent<Image>().color = Color.black;
             Hands[i].transform.GetChild(0).GetComponent<Image>().color = Color.black;
+            Hands[i].transform.GetChild(2).GetComponent<SellComponent>().Hide();
         }
     }
 
@@ -38,6 +39,9 @@ public class InventoryView : MonoBehaviour
 
         //アイテム反映
         Hands[i].transform.GetChild(0).GetComponent<Image>().sprite =  item.image;
-        Hands[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = Cal.I.CalcPrice(item).ToString();
+        Hands[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.price.ToString();
+
+        if(item.price < Cal.I.CalcPrice(item)) Hands[i].transform.GetChild(2).GetComponent<SellComponent>().ShowPlus(Cal.I.CalcPrice(item));
+        else if(item.price > Cal.I.CalcPrice(item)) Hands[i].transform.GetChild(2).GetComponent<SellComponent>().ShowMinus(Cal.I.CalcPrice(item));
     }
 }
