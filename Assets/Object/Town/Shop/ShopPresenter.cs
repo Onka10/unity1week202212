@@ -23,7 +23,7 @@ public class ShopPresenter : MonoBehaviour
         //情報の入手
         var towndata = townStatus.GetMowTownData();
         // 商品の用意
-        model.ShopModelG(towndata.Supply);
+        model.ShopModelG(towndata.Production);
 
         //README viewは仕様変更の可能性あり
         view.ShowAll();

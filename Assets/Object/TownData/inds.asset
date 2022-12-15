@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 3
   status1: 3
-  status2: 3
-  Supply: 1
+  Production: 1
   Demand: 0
   BackGround: {fileID: 2100000, guid: dfa25e8b1dffe5a4f82679aec7256c29, type: 2}

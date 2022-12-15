@@ -15,7 +15,7 @@ public class Cal : Singleton<Cal>
         townData = town.GetMowTownData();
         item = it;
         //定価 * 町の固定バフ * 町の需要と供給 * アイテム自体のバフ * (情勢のバフ) =　最終値段
-        float price = (float)it.price * CalcTownBuff() * CalcSDBuff() * CalcItemBuff();
+        float price = (float)it.price * CalcTownBuff() * CalcDemandBuff() * CalcItemBuff();
         return (int)price;
     }
 
@@ -32,13 +32,10 @@ public class Cal : Singleton<Cal>
         else return 1f;
     }
 
-    float CalcSDBuff(){
-        //需要と供給のバフ
-        if(townData.Type ==TownType.MyTown) return 1f;
-
-        if(item.type == townData.Supply) return 1f;
-        else if(item.type == townData.Demand) return 2f;
-        else return 1.5f;
+    float CalcDemandBuff(){
+        //需要
+        if(item.type == townData.Demand) return 1.5f;
+        else return 1f;
     }
 
     float CalcItemBuff(){
