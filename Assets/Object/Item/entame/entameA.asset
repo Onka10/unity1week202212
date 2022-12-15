@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   itemName: "\u6620\u753Ba"
-  price: 1000
+  price: 600
   image: {fileID: 21300000, guid: c8b5d74e1129f174c9cb6b1e72afd469, type: 3}

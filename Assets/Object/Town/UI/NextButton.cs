@@ -10,18 +10,18 @@ public class NextButton : MonoBehaviour
     void Start()
     {
         this.gameObject.GetComponent<Button>().OnClickAsObservable()
-        .Where(_ => GameManager.I.Step.Value != GameManager.MaxTownCount)
+        .Where(_ => GameManager.I.Step.Value <= GameManager.MaxTownCount)
         .Subscribe(_ => GameManager.I.ToMap())
         .AddTo(this);   
 
         this.gameObject.GetComponent<Button>().OnClickAsObservable()
-        .Where(_ => GameManager.I.Step.Value == GameManager.MaxTownCount)
+        .Where(_ => GameManager.I.Step.Value > GameManager.MaxTownCount)
         .Subscribe(_ => GameManager.I.Finish())
         .AddTo(this);  
 
 
         GameManager.I.MapTown
-        .Where(_ => GameManager.I.Step.Value == GameManager.MaxTownCount-1)
+        .Where(_ => GameManager.I.Step.Value == GameManager.MaxTownCount)
         .Subscribe(_ =>{
             this.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "旅を終える";
         })
