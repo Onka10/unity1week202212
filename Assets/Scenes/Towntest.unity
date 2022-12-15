@@ -861,7 +861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   view: {fileID: 1661441417}
   model: {fileID: 166573367}
-  townStatus: {fileID: 0}
+  townStatus: {fileID: 166573365}
 --- !u!114 &166573367
 MonoBehaviour:
   m_ObjectHideFlags: 0
