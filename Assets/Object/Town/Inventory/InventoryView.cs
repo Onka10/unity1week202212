@@ -43,5 +43,6 @@ public class InventoryView : MonoBehaviour
 
         if(item.price < Cal.I.CalcPrice(item)) Hands[i].transform.GetChild(2).GetComponent<SellComponent>().ShowPlus(Cal.I.CalcPrice(item));
         else if(item.price > Cal.I.CalcPrice(item)) Hands[i].transform.GetChild(2).GetComponent<SellComponent>().ShowMinus(Cal.I.CalcPrice(item));
+        else Hands[i].transform.GetChild(2).GetComponent<SellComponent>().Hide();
     }
 }
