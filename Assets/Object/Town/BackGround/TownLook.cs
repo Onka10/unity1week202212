@@ -9,13 +9,13 @@ public class TownLook : MonoBehaviour
     [SerializeField] MapPresenter mapP;
     void Start()
     {
-        GameManager.I.MapTown
-        .Where(s => s==InGameSate.Town)
+        GameManager.I.InPhase
+        .Where(s => s==InGamePhase.Town)
         .Subscribe(s => Change(s))
         .AddTo(this);
     }
 
-    void Change(InGameSate s){
+    void Change(InGamePhase s){
         renderer.material = mapP.GetTownData(GameManager.I.Step.Value).BackGround;
     }
 }
