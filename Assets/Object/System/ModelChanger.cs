@@ -7,7 +7,7 @@ public class ModelChanger :Singleton<ModelChanger>
     [SerializeField] GameObject Map;
 
     private void Start() {
-        GameManager.I.MapTown
+        GameManager.I.InPhase
         .Subscribe(s => Change(s))
         .AddTo(this);
 
@@ -16,8 +16,8 @@ public class ModelChanger :Singleton<ModelChanger>
         .AddTo(this);
     }
 
-    void Change(InGameSate s){
-        if(s==InGameSate.Map){
+    void Change(InGamePhase s){
+        if(s==InGamePhase.Map){
             BackGround.SetActive(false);
             Map.SetActive(true);
         }else{

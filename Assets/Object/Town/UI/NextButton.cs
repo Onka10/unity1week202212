@@ -20,7 +20,7 @@ public class NextButton : MonoBehaviour
         .AddTo(this);  
 
 
-        GameManager.I.MapTown
+        GameManager.I.InPhase
         .Where(_ => GameManager.I.Step.Value == GameManager.MaxTownCount)
         .Subscribe(_ =>{
             this.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "旅を終える";

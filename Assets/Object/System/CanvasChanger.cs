@@ -13,7 +13,7 @@ public class CanvasChanger : Singleton<CanvasChanger>
     
 
     private void Start() {
-        GameManager.I.MapTown
+        GameManager.I.InPhase
         .Subscribe(s => Change(s))
         .AddTo(this);
 
@@ -24,11 +24,11 @@ public class CanvasChanger : Singleton<CanvasChanger>
     }
 
 
-    void Change(InGameSate s){
-        if(s==InGameSate.Map){
+    void Change(InGamePhase s){
+        if(s==InGamePhase.Map){
             town.SetActive(false);
             map.SetActive(true);
-        }else if(s==InGameSate.Town){
+        }else if(s==InGamePhase.Town){
             map.SetActive(false);
             town.SetActive(true);
         }else{
