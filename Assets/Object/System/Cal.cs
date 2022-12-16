@@ -22,14 +22,9 @@ public class Cal : Singleton<Cal>
 
     //以下の関数で乱数の使用は禁止。再現性がなくなります。
     float CalcTownBuff(){
-        //町のバフを確認
-        // 港＝供給と需要が価格安い
-        // 王都＝供給も需要も価格高い
+        if(townData.Type == TownType.MyTown) return 1f;
+        else return WorldData.I.Economy;
 
-        if(townData.Type == TownType.Kingdom) return 1.5f;
-        else if(townData.Type == TownType.Port) return 0.5f;
-        else if(townData.Type == TownType.Desert) return WorldData.I.Economy;
-        else return 1f;
     }
 
     float CalcDemandBuff(){
