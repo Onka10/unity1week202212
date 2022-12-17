@@ -7,10 +7,8 @@ public class ActionDB : Singleton<ActionDB>
     [SerializeField] List<Action> Lis = new List<Action>();
     [SerializeField] List<Action> Final = new List<Action>();
 
-    public Action GetRandomAction(TownType t){
-        //FIXME 仮で
+    public Action GetRandomAction(){  
         var r = Random.Range(0,5);
-        
         return Lis[r];
     }
 

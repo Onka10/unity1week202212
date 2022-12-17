@@ -18,13 +18,21 @@ public class ResultPresenter : MonoBehaviour
     }
 
     private async UniTaskVoid Result1(){
+        PlayerManager.I.Finish();
         var data = PlayerManager.I.GetData();
+        
 
         view.SetText("こうして私は旅を終えて私の町へと帰ってきた");
         await UniTask.Delay(2000);
-        view.SetText("旅を振り返ってみると");
+        view.SetText("しかし、結局記憶は戻らなかった");
         await UniTask.Delay(2000);
-        view.SetText("私はどうやら"+ data.Rank +"な人間らしい");
+        view.SetText("町の住人から話を聞くと");
+        await UniTask.Delay(2000);
+        view.SetText("私はどうやら"+ data.Rank +"人間らしい");
+        await UniTask.Delay(2000);
+        view.SetText("それが分かっただけでも今はいいじゃないか");
+        await UniTask.Delay(2000);
+        view.SetText("そうして私の旅は終わった");
     }
 
 }

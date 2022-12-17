@@ -5,8 +5,17 @@ using UnityEngine;
 public class PlayerData
 {
     public string Rank;
+    List<Action> actionLog;
 
     public PlayerData(){
-        Rank = "xxx";
+        actionLog = new List<Action>();
+    }
+
+    public void Add(Action a){
+        actionLog.Add(a);
+    }
+
+    public void Finish(){
+        Rank = ToStringSS.EnumToStringAction(actionLog[0].type);
     }
 }

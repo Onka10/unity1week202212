@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb22df2569a6e8e4d9c36b4938dd36a0, type: 3}
   m_Name: Co
   m_EditorClassIdentifier: 
-  actionName: co
+  actionName: "\u9032\u3080"
   type: 2
-  image: {fileID: 21300000, guid: acdc79226837ea443b6169d7d179f4ae, type: 3}
+  bookText: "\u4F11\u3080\u4E8B\u7121\u304F\u6B69\u304D\u7D9A\u3051\u305F"
+  image: {fileID: 21300000, guid: 9ae1eef757c96ca46b61382d7c69171c, type: 3}

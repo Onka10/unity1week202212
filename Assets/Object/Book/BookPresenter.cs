@@ -42,14 +42,16 @@ public class BookPresenter : Singleton<BookPresenter>
     IEnumerator ChangeIR()
     {
         yield return new WaitForSeconds(2);
+        view.SetText("町の住人に迎え入れられた");
+        yield return new WaitForSeconds(2);
         view.SetText("どうやらここが私の町らしい");
         yield return new WaitForSeconds(2);
         view.Hide();
-        GameManager.I.ToNextInTown();
+        GameManager.I.Finish();
     }
     
     void Out(){
-        view.SetText(SelectPresenter.I.GetNowAction() + "を行った");
+        view.SetText(SelectPresenter.I.GetNowAction().bookText);
         StartCoroutine("ChangeO");
     }
 
@@ -60,7 +62,7 @@ public class BookPresenter : Singleton<BookPresenter>
         view.SetText("私は"+st+"人間だったのかもしれない");
         yield return new WaitForSeconds(2);
         view.Hide();
-        if(GameManager.I.Step.Value >= GameManager.MaxTownCount) GameManager.I.Finish();
-        else GameManager.I.ToMap();
+
+        GameManager.I.ToMap();
     }
 }
