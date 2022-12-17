@@ -18,13 +18,12 @@ public class TownStatusPresenter : Singleton<TownStatusPresenter>
         .AddTo(this);
 
         GameManager.I.InPhase
-        .Where(s => s==InGamePhase.Town)
+        .Where(s => s==InGamePhase.BookIn)
         .Subscribe(s => view.Setdata(model.nowTown))
         .AddTo(this);
     }
 
     void Ready(){
-        Debug.Log(GameManager.I.Step.Value);
         model.nowTown = MapPresenter.I.GetTownData(GameManager.I.Step.Value);
         _decided.OnNext(Unit.Default);
     }

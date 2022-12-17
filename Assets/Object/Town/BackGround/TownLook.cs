@@ -10,7 +10,7 @@ public class TownLook : MonoBehaviour
     void Start()
     {
         GameManager.I.InPhase
-        .Where(s => s==InGamePhase.Town)
+        .Where(s => s==InGamePhase.BookIn)
         .Subscribe(s => Change(s))
         .AddTo(this);
     }

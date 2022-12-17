@@ -19,15 +19,16 @@ public class ToStringSS
         {TownType.Kingdom ,"王都"},
         {TownType.Desert ,"砂漠の町"},
         {TownType.Port ,"港町"},
-        {TownType.industrialCity,"工業都市"},
+        {TownType.Meadow,"放牧地"},
         {TownType.MyTown,"目的の町"},
-        {TownType.FirstTown,"見知らぬ土地"}
+        {TownType.StartPoint,"見知らぬ土地"}
     };
 
     static private Dictionary<ActionType, string> ActionStringDict= new Dictionary<ActionType, string>(){
-        {ActionType.H ,"hhな"},
-        {ActionType.A  ,"aaな"},
-        {ActionType.B  ,"bbな"},
-        {ActionType.S ,"ssな"},
+        {ActionType.Extraversion ,"外交的な"},
+        {ActionType.Agreeableness  ,"優しい"},
+        {ActionType.Conscientiousness  ,"誠実な"},
+        {ActionType.Neuroticism ,"落ち着いた"},
+        {ActionType.Openness ,"創造的な"},
     };
 }

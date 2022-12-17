@@ -7,7 +7,7 @@ public class GameManager : Singleton<GameManager>
 {
     public static int MaxTownCount=5;
     public IReadOnlyReactiveProperty<GamePhase> Phase => _state;
-    private readonly ReactiveProperty<GamePhase> _state = new ReactiveProperty<GamePhase>(global::GamePhase.Title);
+    private readonly ReactiveProperty<GamePhase> _state = new ReactiveProperty<GamePhase>(global::GamePhase.Intro);
 
 
     public IReadOnlyReactiveProperty<InGamePhase> InPhase => _instate;
@@ -22,6 +22,11 @@ public class GameManager : Singleton<GameManager>
         // if(Input.GetKeyDown(KeyCode.N)) _state.Value = GameState.Town;
         // Debug.Log(step.Value);
     }
+
+    public void EndIntro(){
+        _state.Value = GamePhase.Title;
+    }
+
     public void Play(){
         _state.Value = GamePhase.InGame;
         _instate.Value = InGamePhase.Map;
@@ -40,10 +45,6 @@ public class GameManager : Singleton<GameManager>
         _instate.Value = InGamePhase.Map;
     }
 
-    // public void ToTown(){
-    //     _instate.Value = InGamePhase.Town;
-    // }
-
 
 
     public void Finish(){
@@ -52,6 +53,7 @@ public class GameManager : Singleton<GameManager>
 }
 
 public enum GamePhase{
+    Intro,
     Title,
     InGame,
     Result

@@ -29,7 +29,7 @@ public class BookPresenter : Singleton<BookPresenter>
 
     void In(){
         var town = TownStatusPresenter.I.GetMowTownData(); 
-        view.SetText(ToStringSS.EnumToString2(town.Type) + "に着きました");
+        view.SetText(ToStringSS.EnumToString2(town.Type) + "へたどり着いた");
         if(town.Type==TownType.MyTown) StartCoroutine("ChangeIR");
         else StartCoroutine("ChangeI");
     }

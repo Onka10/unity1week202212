@@ -6,6 +6,7 @@ using UniRx;
 public class CanvasChanger : Singleton<CanvasChanger>
 {
     // [SerializeField] GameState state;
+    [SerializeField] GameObject intro;
     [SerializeField] GameObject title;
     [SerializeField] GameObject town;
     [SerializeField] GameObject map;
@@ -19,7 +20,24 @@ public class CanvasChanger : Singleton<CanvasChanger>
 
 
         GameManager.I.Phase
-        .Subscribe(s => ChangePhase(s))
+        .Subscribe(s =>{
+            if(s==GamePhase.Intro) intro.SetActive(true);
+            else  intro.SetActive(false);
+        })
+        .AddTo(this);
+
+        GameManager.I.Phase
+        .Subscribe(s =>{
+            if(s==GamePhase.Title) title.SetActive(true);
+            else  title.SetActive(false);
+        })
+        .AddTo(this);
+
+        GameManager.I.Phase
+        .Subscribe(s =>{
+            if(s==GamePhase.Result) result.SetActive(true);
+            else  result.SetActive(false);
+        })
         .AddTo(this);
     }
 
@@ -34,19 +52,6 @@ public class CanvasChanger : Singleton<CanvasChanger>
         }else{
             map.SetActive(false);
             town.SetActive(false);
-        }
-    }
-
-    void ChangePhase(GamePhase s){
-        if(s==GamePhase.Title){
-            title.SetActive(true);
-        }else if(s==GamePhase.Result){
-            map.SetActive(false);
-            town.SetActive(false);
-            result.SetActive(true);
-        }else{
-            title.SetActive(false);
-            result.SetActive(false);
         }
     }
 }
