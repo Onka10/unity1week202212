@@ -12,8 +12,9 @@ public class Action : ScriptableObject
 }
 
 public enum ActionType{
-    H,
-    A,
-    B,
-    S,
+    Extraversion,//外向性
+    Agreeableness,//協調性
+    Conscientiousness,//誠実性
+    Neuroticism,//精神的安定性
+    Openness//創造性
 }

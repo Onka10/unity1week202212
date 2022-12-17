@@ -13,8 +13,8 @@ public enum TownType{
     Desert,
     Port,
     Kingdom,
-    industrialCity,
+    Meadow,
     MyTown,
-    FirstTown,
+    StartPoint,
     
 }

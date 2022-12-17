@@ -13,8 +13,4 @@ MonoBehaviour:
   m_Name: Port
   m_EditorClassIdentifier: 
   Type: 1
-  status1: 3
-  status2: 3
-  Supply: 0
-  Demand: 2
-  BackGround: {fileID: 2100000, guid: dfa25e8b1dffe5a4f82679aec7256c29, type: 2}
+  BackGround: {fileID: 2100000, guid: ff3ff4d269d09e241a08aa08a208f4f0, type: 2}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72bf7dc6f53c281488f427ab4bf9853d, type: 3}
-  m_Name: FirstTown
+  m_Name: MyTown
   m_EditorClassIdentifier: 
-  Type: 5
+  Type: 4
   BackGround: {fileID: 2100000, guid: d7a46af48566ff94c9e023968adbd288, type: 2}

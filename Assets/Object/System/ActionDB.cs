@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class ActionDB : Singleton<ActionDB>
 {
-    // [SerializeField] List<Action> Ente = new List<Action>();
-    // [SerializeField] List<Action> Food = new List<Action>();
-    // [SerializeField] List<Action> Funi = new List<Action>();
-    [SerializeField] List<Action> Starter = new List<Action>();
+    [SerializeField] List<Action> Lis = new List<Action>();
     [SerializeField] List<Action> Final = new List<Action>();
 
     public Action GetRandomAction(TownType t){
         //FIXME 仮で
-        var r = Random.Range(0,4);
+        var r = Random.Range(0,5);
         
-        return Starter[r];
+        return Lis[r];
     }
 
     public Action GetFinalAction(int n){
