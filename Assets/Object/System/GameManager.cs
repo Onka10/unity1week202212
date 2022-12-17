@@ -5,7 +5,7 @@ using UniRx;
 
 public class GameManager : Singleton<GameManager>
 {
-    public static int MaxTownCount=5;
+    public static int MaxTownCount=4;
     public IReadOnlyReactiveProperty<GamePhase> Phase => _state;
     private readonly ReactiveProperty<GamePhase> _state = new ReactiveProperty<GamePhase>(global::GamePhase.Intro);
 

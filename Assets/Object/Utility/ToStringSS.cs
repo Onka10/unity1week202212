@@ -20,8 +20,8 @@ public class ToStringSS
         {TownType.Desert ,"砂漠の町"},
         {TownType.Port ,"港町"},
         {TownType.Meadow,"放牧地"},
-        {TownType.MyTown,"目的の町"},
-        {TownType.StartPoint,"見知らぬ土地"}
+        {TownType.MyTown,"見覚えのある町"},
+        {TownType.StartPoint,"小さな集落"}
     };
 
     static private Dictionary<ActionType, string> ActionStringDict= new Dictionary<ActionType, string>(){

@@ -8,6 +8,7 @@ public class Action : ScriptableObject
     
     [SerializeField] public string actionName;
     [SerializeField] public ActionType type;
+    [SerializeField] public string bookText;
     [SerializeField] public Sprite image;
 }
 

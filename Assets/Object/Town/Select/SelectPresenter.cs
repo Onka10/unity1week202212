@@ -20,6 +20,7 @@ public class SelectPresenter : Singleton<SelectPresenter>
     void Ready(){
         //情報の入手
         var towndata = TownStatusPresenter.I.GetMowTownData();
+
         // 商品の用意
         model.ShopModelG(towndata.Type);
         
@@ -29,6 +30,7 @@ public class SelectPresenter : Singleton<SelectPresenter>
 
     public void Act(int id){
         nowAct =  model.GetAction(id);
+        PlayerManager.I.AddData(nowAct);
         GameManager.I.ToNextInTown();
     }
 

@@ -12,9 +12,16 @@ public class SelectModel : MonoBehaviour
             actions[1]= ActionDB.I.GetFinalAction(1);
             actions[2]= ActionDB.I.GetFinalAction(2);
         }else{
-            actions[0]= ActionDB.I.GetRandomAction(it);
-            actions[1]= ActionDB.I.GetRandomAction(it);
-            actions[2]= ActionDB.I.GetRandomAction(it);
+            actions[0]= ActionDB.I.GetRandomAction();
+            while(true){
+                actions[1]= ActionDB.I.GetRandomAction();
+                if(actions[0]!=actions[1]) break;
+            }
+
+            while(true){
+                actions[2]= ActionDB.I.GetRandomAction();
+                if(actions[0]!=actions[2] && actions[1]!=actions[2]) break;
+            }
         }
 
 

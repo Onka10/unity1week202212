@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb22df2569a6e8e4d9c36b4938dd36a0, type: 3}
   m_Name: Ag
   m_EditorClassIdentifier: 
-  actionName: ag
+  actionName: "\u63A2\u7D22"
   type: 1
-  image: {fileID: 21300000, guid: acdc79226837ea443b6169d7d179f4ae, type: 3}
+  bookText: "\u6545\u90F7\u3078\u306E\u624B\u571F\u7523\u3092\u7269\u8272\u3057\u305F"
+  image: {fileID: 21300000, guid: 1c2d597c9a5183541ab91a30d6984ada, type: 3}
